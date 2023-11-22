@@ -1,0 +1,5 @@
+spring:
+  cloudinary:
+    cloudname: ${CLOUD_NAME}
+    apikey: ${API_KEY}
+    apisecret: ${API_SECRET}

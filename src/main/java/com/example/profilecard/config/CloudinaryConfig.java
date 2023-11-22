@@ -1,6 +1,7 @@
 package com.example.profilecard.config;
 
 import com.cloudinary.Cloudinary;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,9 +11,14 @@ import java.util.Map;
 
 @Configuration
 public class CloudinaryConfig {
-    private final String CLOUD_NAME = "YOUR_CLOUD_NAME";
-    private final String API_KEY = "YOUR_API_KEY";
-    private final String API_SECRET = "YOUR_API_SECRET";
+    @Value("${spring.cloudinary.cloudname}")
+    private  String CLOUD_NAME;
+
+    @Value("${spring.cloudinary.apikey}")
+    private String API_KEY;
+
+    @Value("${spring.cloudinary.apisecret}")
+    private String API_SECRET;
 
     @Bean
     public Cloudinary cloudinary(){
@@ -22,4 +28,5 @@ public class CloudinaryConfig {
         config.put("api_secret",API_SECRET);
         return new Cloudinary(config);
     }
+
 }
