@@ -11,6 +11,7 @@ import java.util.Map;
 
 @Configuration
 public class CloudinaryConfig {
+
     @Value("${spring.cloudinary.cloudname}")
     private  String CLOUD_NAME;
 

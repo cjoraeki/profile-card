@@ -26,6 +26,7 @@ public class FileUploadController {
                              Model model) throws IOException {
         String imageURL = fileUpload.uploadFile(multipartFile);
         model.addAttribute("imageURL",imageURL);
+        System.out.println(imageURL);
         return "gallery";
     }
 }
